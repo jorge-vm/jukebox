@@ -1,0 +1,138 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@selected: #0085B2;
+@down: #00698c;
+@unselected: #dddddd;
+@star: #d9d900;
+@background: #90b9c9;
+@white: white;
+
+
+ul.albums
+{ 
+    display: inline-flex;
+    list-style: none; 
+    text-align: center;
+    
+    li{ 
+        cursor: pointer;
+        padding: 25px;
+        font-size: larger;
+        width: 19%;
+        margin-right: 1%;
+
+        div.name{
+            color: @selected;
+        }
+        
+        &.selected{
+            background-color: @selected;
+            color: @white;
+            
+            div.name{
+                color: @white;
+            }
+        }
+    } 
+}
+
+div.buttons-container{
+    display: block;
+    
+    button{
+        font-size: x-large;
+        padding: 1rem;
+        border: 1px @unselected solid;
+        &.right{
+            float: right;
+        }
+        
+        &:hover{
+            color: @white;
+            background: @selected;
+        }
+    }
+ }
+
+div.songs-container{
+     width: 70%;
+     display: block;
+     margin: 0 auto;
+     
+
+    ul.songs
+    { 
+      list-style: none; 
+    
+        li{
+            border-bottom: 1px @unselected solid; 
+            padding: 0.5rem;
+
+            div{
+            display: inline-block;
+            margin-right: 1rem; 
+
+            padding-top: 0.3rem;
+            padding-bottom: 0.3rem;
+
+            &.id{
+                background-color: @background;
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+                color: @white;
+            }
+
+            &.favorite{
+                color: @unselected;
+                font-size: larger;
+                cursor: pointer;
+                &.marked{
+                    color: @star;
+                }
+            }
+            &.name{
+                color: @selected;
+            }
+            &.label{
+                background-color: @unselected;
+                
+                padding-right: 1rem;
+                padding-left: 1rem;
+                font-size: smaller;
+            }
+            &.duration{
+                float: right;
+            }
+          }
+  
+          &.selected{
+              background-color: @selected;
+              color: @white;
+
+              div{
+                &.name{
+                    color: @white;
+                }
+                &.favorite{
+                    color: @white;
+                    &.marked{
+                        color: @star;
+                    }
+                }
+                &.label{
+                    opacity: 0.8;
+                    
+                }
+              }
+          }
+        }      
+    }
+}
+ 
+  
+  
+  

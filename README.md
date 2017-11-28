@@ -5,9 +5,15 @@ Digital jukebox web app. On landing, an album is auto-selected with the song lis
 When the user scrolls, the next album in the carousel is selected and the corresponding song list and additional details are displayed below;
 also, the currently selected album’s song list collapse close, the albums carousel, and then the newly selected album’s song list expand open. 
 
-## Frameworks
+## Frameworks and Libraries
 
-This project was generated with [Angular]
+This project was created with Angular (https://angular.io/)
+
+Styles use LESS (http://lesscss.org/)
+
+The arrows and the stars are from Font Awesome (http://fontawesome.io/icons/)
+
+Everything else is Javascript and HTML.
 
 ## Development server
 

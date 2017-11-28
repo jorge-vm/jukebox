@@ -1,26 +1,40 @@
+<div class="buttons-container">
+  <button class="left" (click)="left()">
+      <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <button class="right" 
+      (click)="right()"
+      >
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    </button>
+</div>
+
 <!-- Guard against missing songs (defensive programming) -->
-<div *ngIf="songs">
-  <button (click)="left()"><</button>
-  <button (click)="right()">></button>
-      <!-- Diagnostic: {{ songs | json }} -->
-      <ul class="songs">
-        <li *ngFor="let sng of songs">
-          <div class="id">
-             {{sng.song_order}}
-          </div>
-          <div class="favorite">
-          </div>
-          <div class="name">
-            {{sng.song_name}}
-          </div>
-          <div class="labels" *ngIf="sng.song_label"> 
-              <li *ngFor="let lbl of sng.song_label">
-                  <div>{{lbl}}</div>
-              </li>
-          </div>
-          <div class="duration">
-            {{sng.song_duration}}
-          </div>
-        </li>
-      </ul>
+<div class="songs-container" *ngIf="songs">
+
+  <!-- Diagnostic: {{ songs | json }} -->
+  <ul class="songs">
+    <li *ngFor="let sng of songs" 
+    (click)="song = sng" 
+    [ngClass]="{selected: sng === song}">
+
+      <div class="id">
+        {{sng.song_order}}
+      </div>
+      <div class="favorite" 
+      (click)="sng.marked ? sng.marked = false : sng.marked = true" 
+       [ngClass]="{ marked : sng.marked}">
+       <i class="fa fa-star" aria-hidden="true"></i>       
+      </div>
+      <div class="name">
+        {{sng.song_name}}
+      </div>
+      <div class="label" *ngFor="let lbl of sng.song_label">
+        {{lbl}}
+      </div>
+      <div class="duration">
+        {{sng.song_duration}}
+      </div>
+    </li>
+  </ul>
 </div>

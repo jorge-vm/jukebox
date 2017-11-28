@@ -3,10 +3,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-album-details',
   templateUrl: './album-details.component.html',
-  styleUrls: ['./album-details.component.css']
+  styleUrls: ['./album-details.component.less']
 })
 export class AlbumDetailsComponent {
-  
+ 
   @Input()
   songs
 
@@ -15,4 +15,7 @@ export class AlbumDetailsComponent {
 
   left()   { this.shift.emit(-1); }
   right()  { this.shift.emit(1); }
+
+
+ 
 }
