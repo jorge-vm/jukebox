@@ -1,0 +1,17 @@
+<p *ngIf="isBusy">
+  <i>Loading ...</i>
+</p>
+<p *ngIf="!isBusy">
+  <i>Click to select an album</i> &nbsp;
+  <button (click)="getAlbums()">Refresh</button> &nbsp;
+</p>
+
+<ul class="albums">
+  <li *ngFor="let abm of albums" (click)="selected(abm)" [ngClass]="{selected: abm === album}">
+    <img src={{abm.cover_photo_url}} alt="cover photo">
+    <div class="name">{{abm.name}}</div>
+    <div class="artist">{{abm.artist_name}}</div>
+  </li>
+</ul>
+
+<app-album-details [songs]="songs" (shift)="shift($event)"></app-album-details>

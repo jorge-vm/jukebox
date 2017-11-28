@@ -1,0 +1,11 @@
+ul.albums
+{ 
+    display: inline-flex;
+    list-style: none; 
+    text-align: center;
+}
+
+.selected {
+    color: purple;
+    font-weight: bold;
+  }

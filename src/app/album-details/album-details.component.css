@@ -1,0 +1,14 @@
+ul.songs
+{ 
+    list-style: none; 
+    text-align: center;
+}
+
+ul.songs > li {
+    display: flex;
+}
+
+ul.songs > li > div{
+    display: inline-flex;
+    padding: 1rem;
+}

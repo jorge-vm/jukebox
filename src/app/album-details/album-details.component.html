@@ -1,0 +1,26 @@
+<!-- Guard against missing songs (defensive programming) -->
+<div *ngIf="songs">
+  <button (click)="left()"><</button>
+  <button (click)="right()">></button>
+      <!-- Diagnostic: {{ songs | json }} -->
+      <ul class="songs">
+        <li *ngFor="let sng of songs">
+          <div class="id">
+             {{sng.song_order}}
+          </div>
+          <div class="favorite">
+          </div>
+          <div class="name">
+            {{sng.song_name}}
+          </div>
+          <div class="labels" *ngIf="sng.song_label"> 
+              <li *ngFor="let lbl of sng.song_label">
+                  <div>{{lbl}}</div>
+              </li>
+          </div>
+          <div class="duration">
+            {{sng.song_duration}}
+          </div>
+        </li>
+      </ul>
+</div>
